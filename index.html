@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>斗地主</title>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="./css/game.css">
+	<link rel="stylesheet" href="./css/game1.css">
+</head>
+
+<body>
+	<!-- 横条 -->
+	<div class="stripe">
+		<img src="./斗地主图片/按钮成品/横条.png" width="522" height="70">
+		<img src="./斗地主图片/按钮成品/圣旨.png" width="522" height="925">
+	</div>
+	<!-- 船舵 -->
+	<div class="rudder">
+		<img src="./斗地主图片/按钮成品/船舵.png">
+	</div>
+	<!-- 火箭 -->
+	<div class="huojian">
+		<img src="./image/hj1.png">
+		<img src="./image/hj2.png">
+		<img src="./image/hj3.png">
+		<img src="./image/hj4.png">
+		<img src="./image/hj5.png">
+		<img src="./image/hj6.png">
+		<img src="./image/hj7.png">
+		<img src="./image/hj8.png">
+		<img src="./image/hj9.png">
+		<img src="./image/hj10.png">
+	</div>
+	<!-- 飞机 -->
+	<div class="feiji">
+		<img src="./image/fj1.png">
+		<img src="./image/fj2.png">
+		<img src="./image/fj3.png">
+		<img src="./image/fj4.png">
+		<img src="./image/fj5.png">
+		<img src="./image/fj6.png">
+		<img src="./image/fj7.png">
+		<img src="./image/fj8.png">
+		<img src="./image/fj9.png">
+		<img src="./image/fj10.png">
+	</div>
+	<!-- 连队 -->
+	<div class="liandui">
+		<img src="./image/ld1.png">
+		<img src="./image/ld2.png">
+		<img src="./image/ld3.png">
+		<img src="./image/ld5.png">
+		<img src="./image/ld4.png">
+		<img src="./image/ld6.png">
+		<img src="./image/ld7.png">
+		<img src="./image/ld8.png">
+		<img src="./image/ld9.png">
+		<img src="./image/ld10.png">
+	</div>
+	<!-- 顺子 -->
+	<div class="shunzi">
+		<img src="./image/sz1.png">
+		<img src="./image/sz2.png">
+		<img src="./image/sz3.png">
+		<img src="./image/sz4.png">
+		<img src="./image/sz5.png">
+		<img src="./image/sz6.png">
+		<img src="./image/sz7.png">
+		<img src="./image/sz8.png">
+		<img src="./image/sz9.png">
+		<img src="./image/sz10.png">
+	</div>
+	<!-- 炸弹 -->
+	<div class="zhadan">
+		<img src="./image/zd1.png">
+		<img src="./image/zd2.png">
+		<img src="./image/zd3.png">
+		<img src="./image/zd4.png">
+		<img src="./image/zd5.png">
+		<img src="./image/zd6.png">
+		<img src="./image/zd7.png">
+		<img src="./image/zd8.png">
+		<img src="./image/zd9.png">
+		<!-- <img src="./image/zd10.png"> -->
+	</div>
+
+	<div class="left" style="position: relative;">
+		<!-- 左边角色 放置人物的div -->
+		<div class="role role_left">
+			<div class="left_fu">
+				<img src="./images/23.png">
+			</div>
+			<!-- 移到人物处的hover效果 -->
+			<div class="a">
+				<img src="./斗地主图片/按钮成品/对酒.png">
+				<img src="./斗地主图片/按钮成品/淫诗.png">
+			</div>
+			
+		</div>
+
+
+		<div class="boss_pic boss1">
+			<img src="./斗地主图片/格外香/大司马1.png">
+		</div>
+		<p class="getBoss" style="position: relative;" data-boss='0'>
+			<img class="call_landlord" src="./斗地主图片/按钮成品/29.png" value="叫地主" data-value="1" data-dizhu='0'>
+			<img class="no_call" src="./斗地主图片/按钮成品/30.png" value="不叫">
+		</p>
+		<p class="action act1">
+			<!-- 出牌控件 -->
+			<!-- <span class="out_poker">
+					<img src="../9-12斗地主_立项/斗地主图片/按钮成品/11.png" width="80" height="50">
+					<span></span>
+				</span>
+				<span class="out_poker no">
+					<img src="../9-12斗地主_立项/斗地主图片/按钮成品/11.png" width="80" height="50">
+					<span></span>
+				</span> -->
+
+
+
+			<img class="play" src="./斗地主图片/按钮成品/31.png" value="出牌">
+			<img class="no" src="./斗地主图片/按钮成品/32.png" value="不出">
+			<!-- js564行 -->
+			<span class="icon_time ic2">
+				<img src="../9-12斗地主_立项/斗地主图片/按钮成品/闹钟.png" width="50" height="50">
+				<span class="last_time">25</span>
+			</span>
+			<!-- 出牌倒计时 -->
+
+		</p>
+		<ul class="play_poker play_1"></ul>
+
+		<!-- 倒计时的闹铃效果 -->
+		<span class="Alarm_Clock clock1">
+			<img src="./斗地主图片/按钮成品/闹铃.png" width="35" height="35">
+		</span>
+	</div>
+
+	<div class="mid">
+		<div class="mid_top">
+
+			<ul class="all_poker">
+				<!-- <li class="back"></li> -->
+				<img class="shengzhi" src="./斗地主图片/按钮成品/圣旨呀.png" width="300" height="150">
+			</ul>
+			<div class="show_poker">
+				<ul class="poker_li">
+
+				</ul>
+			</div>
+		</div>
+		<div class="mid_end">
+			<!-- 中间角色 放置人物的div -->
+			<div class="role role_mid">
+				<img src="./images/24.png">
+			</div>
+
+			<p class="getBoss" data-boss='0'>
+				<img class="call_landlord" src="./斗地主图片/按钮成品/29.png" value="叫地主" data-value="2" data-dizhu='0'>
+				<img class="no_call" src="./斗地主图片/按钮成品/30.png" value="不叫">
+			</p>
+			<p class="action act2">
+				<!-- 出牌控件 -->
+				<!-- <span class="out_poker">
+						<img src="../9-12斗地主_立项/斗地主图片/按钮成品/11.png" width="80" height="50">
+						<span></span>
+					</span>
+					<span class="out_poker no">
+						<img src="../9-12斗地主_立项/斗地主图片/按钮成品/11.png" width="80" height="50">
+						<span></span>
+					</span> -->
+
+
+				<img class="play" src="./斗地主图片/按钮成品/31.png" value="出牌">
+				<img class="no" src="./斗地主图片/按钮成品/32.png" value="不出">
+				<span class="icon_time ic2">
+					<img src="../9-12斗地主_立项/斗地主图片/按钮成品/闹钟.png" width="50" height="50">
+					<!-- 因为定时器有延迟，如果想要去延迟的效果，给span文本一个值 -->
+					<span class="last_time">25</span>
+				</span>
+				<!-- 出牌倒计时 -->
+			</p>
+			<ul class="play_poker play_2">
+				<!-- <li style="width: 125px; height: 175px; background: url(./images/14.png) -162px -5px;"></li> -->
+
+			</ul>
+			<!-- 倒计时的闹铃效果 -->
+			<span class="Alarm_Clock clock2">
+				<img src="./斗地主图片/按钮成品/闹铃.png" width="35" height="35">
+			</span>
+		</div>
+	</div>
+
+	<div class="right">
+		<!-- 右边角色 放置人物的div -->
+		<div class="role role_right">
+			<div class="right_fu">
+				<img src="./images/25.png">
+			</div>
+			<!-- 移到人物处的hover效果 -->
+			<div class="b">
+				<img src="./斗地主图片/按钮成品/当哥.png">
+				<img src="./斗地主图片/按钮成品/做对.png">
+			</div>
+		</div>
+
+		<div class="boss_pic boss3">
+			<img src="./斗地主图片/格外香/嫖老师1.png">
+		</div>
+		<p class="getBoss" data-boss='0'>
+			<img class="call_landlord" src="./斗地主图片/按钮成品/29.png" value="叫地主" data-value="3" data-dizhu='0'>
+			<img class="no_call" src="./斗地主图片/按钮成品/30.png" value="不叫">
+		</p>
+		<p class="action act3">
+			<!-- 出牌控件 -->
+			<!-- <span class="out_poker">
+					<img src="../9-12斗地主_立项/斗地主图片/按钮成品/11.png" width="80" height="50">
+					<span></span>
+				</span>
+				<span class="out_poker no">
+					<img src="../9-12斗地主_立项/斗地主图片/按钮成品/11.png" width="80" height="50">
+					<span></span>
+				</span> -->
+
+
+			<img class="play" src="./斗地主图片/按钮成品/31.png" value="出牌">
+			<img class="no" src="./斗地主图片/按钮成品/32.png" value="不出">
+			<!-- js控制出牌时间见573行上下 -->
+			<span class="icon_time ic2">
+				<img src="../9-12斗地主_立项/斗地主图片/按钮成品/闹钟.png" width="50" height="50">
+				<span class="last_time">25</span>
+			</span>
+			<!-- 出牌倒计时 -->
+		</p>
+		<ul class="play_poker play_3"></ul>
+
+		<!-- 倒计时的闹铃效果 -->
+		<span class="Alarm_Clock clock3">
+			<img src="./斗地主图片/按钮成品/闹铃.png" width="35" height="35">
+		</span>
+	</div>
+	<div class="boss_pic boss2">
+		<img src="./斗地主图片/格外香/地主1.png">
+	</div>
+	<!-- 倍数专位 -->
+	<div class="multiple">
+		<img src="./斗地主图片/按钮成品/正常点的黑.png" width="60" height="60"></img>
+		<span>15</span>
+
+	</div>
+	<!-- 聊天框专用    补上一句:代表山区的儿童谢谢你! -->
+	<article class="chatting">
+		<section class="liaotian">
+			<img class="yuyan" src="./斗地主图片/按钮成品/对话框1.png">
+			<span class="sp">
+				<img src="./斗地主图片/按钮成品/见到各位.png" data-value="1">
+				<img src="./斗地主图片/按钮成品/花儿.png" data-value="2">
+				<img src="./斗地主图片/按钮成品/决战天亮.png" data-value="3">
+				<!-- <img src="./斗地主图片/按钮成品/对子.png"> -->
+				<img src="./斗地主图片/按钮成品/专心游戏.png" data-value="4">
+				<img src="./斗地主图片/按钮成品/雄雌.png" data-value="5">
+				<img src="./斗地主图片/按钮成品/网络.png" data-value="6">
+			</span>
+		</section>
+		<img class="liao_icon" src="./斗地主图片/按钮成品/聊天框.png">
+	</article>
+	<!-- 呼叫管家 -->
+	<div class="butler">
+		<img src="./斗地主图片/按钮成品/445.png" width="130" height="60">
+	</div>
+	<!-- 退下 -->
+	<div class="tuixia">
+		<img src="./斗地主图片/按钮成品/446.png" width="130" height="60">
+	</div>
+	<!-- 傻强服务 -->
+	<div class="shaqiang">
+		<p>
+			<a class="emi" title="为您服务">
+				<span>老板! 喝茶还是喝咖啡?<img class="coffee" src="./斗地主图片/按钮成品/茶与咖啡.png" width="56" height="56" title="卡布奇诺"></img></span>
+			</a>
+		</p>
+	</div>
+	<!-- 鸭梨 -->
+	<!-- <span class="pear">
+		<img class="pear_img" src="./斗地主图片/按钮成品/鸭梨1.png" width="40" height="45">
+		<img class="pear_img" src="./斗地主图片/按钮成品/鸭梨3.png" width="40" height="45">
+		<img class="pear_img" src="./斗地主图片/按钮成品/鸭梨2.png" width="40" height="45">
+		<img class="pear_img" src="./斗地主图片/按钮成品/鸭梨4.png" width="40" height="45">
+	</span> -->
+	<!-- 出话框 玩家一-->
+	<div class="say say1">
+		<img src="./斗地主图片/按钮成品/古天乐.png" >
+		<img src="./斗地主图片/按钮成品/花儿谢了.png" data-value="2">
+		<img src="./斗地主图片/按钮成品/天亮决战.png" data-value="3">
+		<img src="./斗地主图片/按钮成品/不要BB.png" data-value="4">
+		<img src="./斗地主图片/按钮成品/美眉哥哥.png" data-value="5">
+		<img src="./斗地主图片/按钮成品/断网告辞.png" data-value="6">
+
+	</div>
+	<!-- 出话框 玩家二-->
+	<div class="say say2">
+		<img src="./斗地主图片/按钮成品/古天乐.png" data-value="1">
+		<img src="./斗地主图片/按钮成品/花儿谢了.png" data-value="2">
+		<img src="./斗地主图片/按钮成品/天亮决战.png" data-value="3">
+		<img src="./斗地主图片/按钮成品/不要BB.png" data-value="4">
+		<img src="./斗地主图片/按钮成品/美眉哥哥.png" data-value="5">
+		<img src="./斗地主图片/按钮成品/断网告辞.png" data-value="6">
+	
+	</div>
+	<!-- 出话框 玩家三-->
+	<div class="say say3">
+		<img src="./斗地主图片/按钮成品/古天乐2.png" data-value="1">
+		<img src="./斗地主图片/按钮成品/花儿谢了2.png" data-value="2">
+		<img src="./斗地主图片/按钮成品/天亮决战2.png" data-value="3">
+		<img src="./斗地主图片/按钮成品/不要BB2.png" data-value="4">
+		<img src="./斗地主图片/按钮成品/美眉哥哥2.png" data-value="5">
+		<img src="./斗地主图片/按钮成品/断网告辞2.png" data-value="6">
+
+	</div>
+	<!-- 记牌器 -->
+	<div class="Marker">
+		<img class="miao" src="./斗地主图片/按钮成品/猫.png" width="125" height="90">
+		<img class="mark" src="./斗地主图片/按钮成品/记牌器.png" width="125" height="95">
+
+	</div>
+	<!-- 倍数说明 -->
+	<div class="double">
+		<img src="./斗地主图片/按钮成品/倍数详情.png">
+	</div>
+	<!--中间VIP玩家倒咖啡-->
+	<div class="cofe">
+		<img src="斗地主图片/咖啡/1.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/2.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/3.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/4.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/5.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/6.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/7.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/8.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/9.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/10.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/11.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/12.png" width="300" height="168">
+		<img src="斗地主图片/咖啡/13.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/14.png" width="300" height="168"/>
+		<img src="斗地主图片/咖啡/15.png" width="300" height="168"/>
+	</div>
+	
+	<!--背景音效-->
+	<audio id="audio_bg" autoplay="autoplay" controls="controls" loop="loop">
+		<source src="audio/Audio_after_bomb.ogg"></source>
+	</audio>
+	<!--进入游戏音效 -->
+	<!--<audio id='audio_bg2' loop="loop">
+		<source src="audio/Audio_Pass2_W.ogg"></source>
+	</audio>-->
+	<!--不出特效-->
+	<audio id="audio_jiao" preload="auto" >
+		<source src="audio/CallLandlord_JDZ_W.ogg"></source>
+	</audio>
+
+	<!-- 记牌器刀 -->
+	<div class="dao">
+		 <img src="./斗地主图片/按钮成品/dao.png" width="808.8" height="174">
+	</div>
+	<div class="jipai_font">
+		<span class="dao_span span15" style="left: 10px">2</span>
+		<span class="dao_span span14" style="left: 28px">4</span>
+		<span class="dao_span span13" style="left: 44px">4</span>
+		<span class="dao_span span12" style="left: 57px">4</span>
+		<span class="dao_span span11" style="left: 65px">4</span>
+		<span class="dao_span span10" style="left: 75px">4</span>
+		<span class="dao_span span9" style="left: 89px">4</span>
+		<span class="dao_span span8" style="left: 103px">4</span>
+		<span class="dao_span span7" style="left: 115px">4</span>
+		<span class="dao_span span6" style="left: 130px">4</span>
+		<span class="dao_span span5" style="left: 148px">4</span>
+		<span class="dao_span span4" style="left: 165px">4</span>
+		<span class="dao_span span3" style="left: 177px">4</span>
+		<span class="dao_span span2" style="left: 192px">4</span>
+		<span class="dao_span span1" style="left: 205px">4</span>
+
+	</div>
+</body>
+<script src="js/game.js"></script>
+<script src="js/snowfall.jquery.js"></script>
+<script>
+	$(document).snowfall('clear');
+        $(document).snowfall({
+            image: "images/huaban.png",
+            flakeCount:30,
+            minSize: 5,
+            maxSize: 22
+        });
+
+</script>
+</html>
